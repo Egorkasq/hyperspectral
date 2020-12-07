@@ -50,11 +50,11 @@ class HyperspectralImageStitch():
                 res_img = np.concatenate((line, res_img))
             else:
                 res_img = np.concatenate((res_img, line))
-            cv2.imshow('123', res_img)
-            cv2.waitKey(0)
+            # cv2.imshow('123', res_img)
+            # cv2.waitKey(0)
         return res_img
 
 
 image = HyperspectralImageStitch('/home/error/PycharmProjects/Spiiran_files/hiperspectral/images/', 1380, 12, False)
-image.hyperspectral_stitching()
-cv2.imwrite('hyperspectral_image.jpg', 1)
+image = image.hyperspectral_stitching()
+cv2.imwrite('hyperspectral_image.jpg', image)
